@@ -12,7 +12,7 @@
 					<?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
 					
 						<!-- standard blog post -->
-						<article id="standard" class="blog-post-item">
+						<article id="<?php the_ID(); ?>" class="blog-post-item <?php post_class(); ?>">
 							<div class="top-bg color-1"></div>
 							
 							<div class="thumbnail">
@@ -30,15 +30,13 @@
 										<h1><a href="<?php the_permalink(); ?>" class="transition"><?php the_title(); ?></a></h1>
 										<h4>
 										<span class="author-name"><strong><?php _e('Post By', 'bestblog'); ?></strong> - <a href="<?php the_permalink(); ?>"><?php the_author(); ?></a></span> | 
-										<span class="comments"><strong><?php _e('Comments', 'bestblog'); ?></strong> - <a href="<?php the_permalink(); ?>"><?php comments_popup_link('No Comment', '1 Comment', '% Comments'); ?></a></span>
+										<span class="comments"><strong><?php _e('Comments', 'bestblog'); ?></strong> - <a href="<?php the_permalink(); ?>"><?php comments_popup_link('No Comment', '% Comment', 'bestblog'); ?></a></span>
 										</h4>
 									</div>
 								</header>
 								
 								<div class="entry-content">
-									<?php the_excerpt(); ?>
-									<!--<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book<a href="single.html" class="read-more"> read more...</a></p>-->
-									
+									<?php the_excerpt(); ?><a href="<?php the_permalink(); ?>" class="read-more">read more...</a>
 								</div>
 							</div>
 							

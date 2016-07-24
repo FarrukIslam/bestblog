@@ -2,7 +2,7 @@
 
 class Twitter_feed extends WP_Widget{
 	public function __construct(){
-		parent::__construct('Twitter_feed',__('Bestblog Show Twitter Feed','textdomain'),array(
+		parent::__construct('Twitter_feed',__('Bestblog Show Twitter Feed','bestblog'),array(
 			'description' => 'Add Setting your Twitter Feed Field',
 		));
 	}

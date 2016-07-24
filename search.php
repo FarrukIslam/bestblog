@@ -9,7 +9,7 @@
 					
 						<h1 class="page-title-archive"> 
 			
-							<?php printf( __( 'Search Results for: %s', 'alexandria' ), '<span>' . get_search_query() . '</span>' ); ?>
+							<?php printf( __( 'Search Results for: %s', 'bestblog' ), '<span>' . get_search_query() . '</span>' ); ?>
 						</h1>
 			
 			
@@ -35,7 +35,7 @@
 										<h1><a href="<?php the_permalink(); ?>" class="transition"><?php the_title(); ?></a></h1>
 										<h4>
 										<span class="author-name"><strong><?php _e('Post By', 'bestblog'); ?></strong> - <a href="<?php the_permalink(); ?>"><?php the_author(); ?></a></span> | 
-										<span class="comments"><strong><?php _e('Comments', 'bestblog'); ?></strong> - <a href="<?php the_permalink(); ?>"><?php comments_popup_link('No Comment', '1 Comment', '% Comments'); ?></a></span>
+										<span class="comments"><strong><?php _e('Comments', 'bestblog'); ?></strong> - <a href="<?php the_permalink(); ?>"><?php comments_popup_link('No Comment', '% Comment', 'bestblog'); ?></a></span>
 										</h4>
 									</div>
 								</header>
@@ -68,7 +68,7 @@
 					 <?php  ?>
 					 
 						<?php else : ?>
-							  <h3><?php _e('404 Error&#58; Not Found', 'CodeforBusiness'); ?></h3>
+							  <h3><?php _e('404 Error&#58; Not Found', 'bestblog'); ?></h3>
 						<?php endif; ?>	
 						
 					</div><!-- End blog wrapper -->

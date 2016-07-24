@@ -7,7 +7,7 @@ Description: 'Bestbolog' is a Responsive Twitter Bootstrap WordPress theme to cr
 Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: black, white, light, dark, two-columns, right-sidebar, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, theme-options
+Tags: two-columns, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, theme-options
 Text Domain: bestblog
 
 This theme, like WordPress, is licensed under the GPL.
@@ -66,6 +66,9 @@ a:hover {
     color: #72c02c;
     text-decoration: none;
 }
+ul{
+    list-style: none;
+}
 input{
 	width: 100%;
 	padding: 10px;
@@ -119,7 +122,15 @@ input:hover, input:focus{
 	background-color: #72c02c;
 	color: #FFFFFF;
 }
-
+/* Wordpress core css */
+.wp-caption,
+.wp-caption-text,
+.screen-reader-text,
+.gallery-caption,
+.bypostauthor,
+.alignright,
+.alignleft,
+.aligncenter{}
 /* navbar default */
 .navbar-top {
     background-color: #FFF;
@@ -689,7 +700,7 @@ position: relative;
     position: relative;
 }
 .search-form #search {
-    width: 75%;
+    width: 90%;
     padding: 5px;
 }
 .search-form #submit {
@@ -718,12 +729,12 @@ position: relative;
 .tab-widget .nav-tabs  li.active  a,
 .tab-widget .nav-tabs  li  a:hover {
     border: none;
-    color: #4285F4 !important;
+    color: #72C02C !important;
     background: transparent;
 }
 .tab-widget .nav-tabs  li  a::after {
     content: "";
-    background: #4285F4;
+    background: #72C02C;
     height: 2px;
     position: absolute;
     width: 100%;
@@ -760,6 +771,7 @@ position: relative;
 .tab-widget .recent-post .entry-title h4 {
 	color: #252525;
 }
+
 /* twitter */
 .recent-twitter {
     list-style: none;
@@ -844,7 +856,26 @@ position: relative;
     color: #72C02C;
     margin-left: 10px;
 }
-
+/* calendar */
+#wp-calendar td {
+    padding: 10px;
+}
+#wp-calendar th {
+    padding: 14px;
+}
+#wp-calendar td a {
+    font-weight: bold;
+    font-size: 16px;
+}
+#wp-calendar caption {
+    display: none;
+}
+.footer-top #wp-calendar th {
+    color: #ddd;
+}
+.footer-top .textwidget {
+    color: #FFF;
+}
 /* Footer */
 .footer {
     background-color: #252525;
@@ -920,6 +951,12 @@ position: relative;
     box-shadow: 0 5px 10px -6px #000;
 	margin-bottom: 10px;
 }
+.right-side .recent-post li {
+    margin-bottom: 10px;
+    border-bottom: 1px dotted #ddd;
+    padding-bottom: 10px;
+    box-shadow: none;
+}
 .recent-post li .thumbnail {
     width: 35px;
     height: 39px;
@@ -930,18 +967,27 @@ position: relative;
     padding: 0;
     font-size: 14px;
 }
-.recent-post .entry-title a:hover  {
+.recent-post .entry-title a:hover, 
+.right-side .recent-post .entry-title a:hover {
     color: #72C02C;
 }
 .recent-post .entry-title a {
     color: #E0DDDB;
 }
+.right-side .recent-post .entry-title a {
+    color: #252525;
+}
+
 .recent-post .entry-title h4 {
     font-size: 12px;
     color: #E0DDDB;
     margin-bottom: 2px;
 }
-
+.right-side .recent-post .entry-title h4 {
+    font-size: 12px;
+    color: #252525;
+    margin-bottom: 2px;
+}
 /* footer address */
 address {
     color: #E0DDDB;

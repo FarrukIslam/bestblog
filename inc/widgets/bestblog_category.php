@@ -50,7 +50,7 @@ class bestblog_category_list extends WP_Widget{
 				';
 			}
 		} else {
-			echo '<p>'.__( 'No Category found!', 'makeclean' ).'</p>';
+			echo '<p>'.__( 'No Category found!', 'bestblog' ).'</p>';
 		}
 	
 			}
