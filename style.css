@@ -983,3 +983,76 @@ address {
 		margin-bottom: 0;
 	}
 }
+
+/* Comments css */
+
+.comment-form label {
+    display: block;
+    margin: 10px 0;
+}
+.comment-form .form-submit {
+    margin-top: 20px;
+}
+.comment-list {
+    margin-bottom: 20px;
+}
+.comment-author img {
+    float: left;
+    overflow: hidden;
+    display: block;
+    margin-right: 15px;
+}
+.comment-body p {
+    display: block;
+    padding: 20px 0 5px;
+}
+.comments-title {
+    font-size: 30px;
+    font-weight: 300;
+    margin: 0 0 20px;
+    color: #666666;
+    font-family: 'Gotham-Book';
+    overflow: hidden;
+}
+.fn {
+    font-weight: bold;
+}
+.comment-list li {
+    margin-bottom: 20px;
+}
+.commentmetadata {
+    padding-top: 10px;
+}
+.commentmetadata a, .reply a{
+    color: #5EBC5E;
+}
+.comment-form .form-submit .submit {
+    border: 0;
+    background-color: #5EBC5E;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: bold;
+    color: #FFF;
+    padding: 10px;
+    border-radius: 3px;
+}
+.comment-form .form-submit .submit:hover {
+    border: 0;
+    background-color: #6EBC6E;
+}
+
+.comment-info p {
+    width: 49.5%;
+    display: inline-block;
+}
+.comment-info input, .comment-form textarea {
+    width: 100%;
+}
+
+div#comments {
+    padding: 35px 30px;
+}
+.comment-info input, .comment-form textarea {
+    width: 100%;
+    border: 1px solid #E0DDDB;
+}

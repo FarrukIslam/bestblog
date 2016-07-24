@@ -93,6 +93,7 @@
 						<li><a href="index.html">Home</a></li>
 						<li class="active">Blog</li>
 					</ol>
+					<?php bestblog_breadcrumb(); ?>
 				</div>
 			</div>	
 		</div>
