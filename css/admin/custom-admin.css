@@ -1,0 +1,15 @@
+.quick_link_widget p:last-child {
+    margin-right: 0;
+}
+
+.quick_link_widget input {
+    width: 100%;
+}
+.quick_link_widget p {
+    width: 48%;
+    float: left;
+    margin-right: 5px;
+}
+.quick_link_widget label {
+    display: block;
+}
