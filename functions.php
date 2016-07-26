@@ -289,37 +289,53 @@ function bestblog_pagination() {
 	echo '</ul></div>' . "\n";
 
 }
+// short titile for breadcrumbs
 
-/* breadcrumbs */
+function bestblog_short_title(){
+		$title_content= explode(" ", get_the_title());
+		$less_title= array_slice($title_content, 0, 5);
+		echo implode(" ", $less_title);	
+	}	
+	
+// breadcrumbs 
 
-function bestblog_breadcrumb() {
+
+function the_breadcrumb() {
     global $post;
-    echo '<ul id="breadcrumbs">';
-    if (!is_home()) {
+    echo '<ol class="breadcrumb">';
+    if (is_home()) {
         echo '<li><a href="';
         echo get_option('home');
         echo '">';
         echo 'Home';
-        echo '</a></li><li class="separator"> <i class="fa fa-long-arrow-right"></i> </li>';
+        echo '</a></li>';
+       
+    } 
+	if (!is_home()) {
+        echo '<li><a href="';
+        echo get_option('home');
+        echo '">';
+        echo 'Home';
+        echo '</a></li>';
         if (is_category() || is_single()) {
             echo '<li>';
-            the_category(' </li><li class="separator"> <i class="fa fa-long-arrow-right"></i> </li><li> ');
+            the_category(' </li><li> ');
             if (is_single()) {
-                echo '</li><li class="separator"> <i class="fa fa-long-arrow-right"></i> </li><li>';
-                the_title();
+                echo '</li><li>';
+                bestblog_short_title();
                 echo '</li>';
             }
         } elseif (is_page()) {
             if($post->post_parent){
                 $anc = get_post_ancestors( $post->ID );
-                $title = get_the_title();
+                $title = bestblog_short_title();
                 foreach ( $anc as $ancestor ) {
-                    $output = '<li><a href="'.get_permalink($ancestor).'" title="'.get_the_title($ancestor).'">'.get_the_title($ancestor).'</a></li> <li class="separator"> <i class="fa fa-long-arrow-right"></i></li>';
+                    $output = '<li><a href="'.get_permalink($ancestor).'" title="'.bestblog_short_title($ancestor).'">'.bestblog_short_title($ancestor).'</a></li> ';
                 }
                 echo $output;
                 echo '<strong title="'.$title.'"> '.$title.'</strong>';
             } else {
-                echo '<li><strong> '.get_the_title().'</strong></li>';
+                echo '<li><strong> '.bestblog_short_title().'</strong></li>';
             }
         }
     }
@@ -330,5 +346,5 @@ function bestblog_breadcrumb() {
     elseif (is_author()) {echo"<li>Author Archive"; echo'</li>';}
     elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {echo "<li>Blog Archives"; echo'</li>';}
     elseif (is_search()) {echo"<li>Search Results"; echo'</li>';}
-    echo '</ul>';
+    echo '</ol>';
 }

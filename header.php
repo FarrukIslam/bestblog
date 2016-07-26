@@ -89,11 +89,9 @@
 				</div>
 				<div class="col-md-offset-4 col-sm-offset-4 col-sm-4 col-md-4 col-xs-12">
 					<?php //custom_breadcrumbs(); ?>
-					<ol class="breadcrumb">
-						<li><a href="index.html">Home</a></li>
-						<li class="active">Blog</li>
-					</ol>
-					<?php bestblog_breadcrumb(); ?>
+					
+					<?php the_breadcrumb(); ?>
+					
 				</div>
 			</div>	
 		</div>
