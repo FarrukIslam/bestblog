@@ -1,6 +1,6 @@
 <?php
 
-if (!defined('BESTBLOG')) define('BESTBLOG', '1.0');
+if (!defined('bestblog')) define('bestblog', '1.0');
 
 if (!class_exists('bestblog_scripts_load'))
 	{
@@ -20,13 +20,13 @@ if (!class_exists('bestblog_scripts_load'))
 			**/
 			
 			/* bootstrap min */
-			wp_enqueue_style('bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array() , BESTBLOG);
+			wp_enqueue_style('bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array() , bestblog);
 			
 			/* ionicons min */
-			wp_enqueue_style('ionicons', get_template_directory_uri() . '/css/ionicons.min.css', array() , BESTBLOG);
+			wp_enqueue_style('ionicons', get_template_directory_uri() . '/css/ionicons.min.css', array() , bestblog);
 			
 			/* owl.carousel */
-			wp_enqueue_style('owl.carousel', get_template_directory_uri() . '/css/owl.carousel.css', array() , BESTBLOG);
+			wp_enqueue_style('owl.carousel', get_template_directory_uri() . '/css/owl.carousel.css', array() , bestblog);
 			
 			
 			/* theme stylesheet */
@@ -47,17 +47,17 @@ if (!class_exists('bestblog_scripts_load'))
 			/* bootstrap min  js */
 			wp_enqueue_script('bootstrap.min', get_template_directory_uri() . '/js/bootstrap.min.js', array(
 				'jquery'
-			) , BESTBLOG, true);	
+			) , bestblog, true);	
 			
 			/* owl.carousel min js */
 			wp_enqueue_script('owl.carousel', get_template_directory_uri() . '/js/owl.carousel.min.js', array(
 				'jquery'
-			) , BESTBLOG, true);	
+			) , bestblog, true);	
 
 			/* custom js */
 			wp_enqueue_script('custom', get_template_directory_uri() . '/js/custom.js', array(
 				'jquery'
-			) , BESTBLOG, true);	
+			) , bestblog, true);	
 
 			
 			/* wordpress comments */
@@ -194,16 +194,24 @@ function bestblog_comment_field_to_bottom( $fields ) {
 add_filter( 'comment_form_fields', 'bestblog_comment_field_to_bottom' );
 
 
+function bestblog_theme_support(){
+  add_theme_support('title-tag');
+  add_theme_support('custom-background');
+}
+add_action('after_setup_theme','bestblog_theme_support');
 
+if( !isset($content_width)) {
+$content_width = 900;
+}
 //include files 
-include 'inc/wp_bootstrap_navwalker.php';
-include 'inc/breadcrumbs.php';
-include 'inc/widgets/bestblog_search.php';
-include 'inc/widgets/bestblog_tag_list.php';
-include 'inc/widgets/bestblog_category.php';
-include 'inc/widgets/bestblog_tab_content.php';
-include 'inc/widgets/twitter-feed.php';
-include 'inc/widgets/bestblog-recentpost.php';
+require 'inc/wp_bootstrap_navwalker.php';
+require 'inc/breadcrumbs.php';
+require 'inc/widgets/bestblog_search.php';
+require 'inc/widgets/bestblog_tag_list.php';
+require 'inc/widgets/bestblog_category.php';
+require 'inc/widgets/bestblog_tab_content.php';
+require 'inc/widgets/twitter-feed.php';
+require 'inc/widgets/bestblog-recentpost.php';
 
 
 
@@ -263,7 +271,7 @@ function bestblog_pagination() {
 		printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( 1 ) ), '1' );
 
 		if ( ! in_array( 2, $links ) )
-			echo '<li>…</li>';
+			echo '<li></li>';
 	}
 
 	/**	Link to current page, plus 2 pages in either direction if necessary */
@@ -276,7 +284,7 @@ function bestblog_pagination() {
 	/**	Link to last page, plus ellipses if necessary */
 	if ( ! in_array( $max, $links ) ) {
 		if ( ! in_array( $max - 1, $links ) )
-			echo '<li>…</li>' . "\n";
+			echo '<li></li>' . "\n";
 
 		$class = $paged == $max ? ' class="active"' : '';
 		printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $max ) ), $max );
@@ -300,7 +308,7 @@ function bestblog_short_title(){
 // breadcrumbs 
 
 
-function the_breadcrumb() {
+function bestblog_breadcrumb() {
     global $post;
     echo '<ol class="breadcrumb">';
     if (is_home()) {
@@ -313,7 +321,7 @@ function the_breadcrumb() {
     } 
 	if (!is_home()) {
         echo '<li><a href="';
-        echo get_option('home');
+        echo home_url('home');
         echo '">';
         echo 'Home';
         echo '</a></li>';

@@ -22,7 +22,7 @@
 							 * what author we're dealing with (if that is the case).
 							*/
 							the_post();
-							printf( __( 'Author: %s', 'alexandria' ), '<span class="vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' );
+							printf( __( 'Author: %s', 'bestblog' ), '<span class="vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' );
 							/* Since we called the_post() above, we need to
 							 * rewind the loop back to the beginning that way
 							 * we can run the loop properly, in full.
@@ -30,31 +30,31 @@
 							rewind_posts();
 
 						elseif ( is_day() ) :
-							printf( __( 'Day: %s', 'alexandria' ), '<span>' . get_the_date() . '</span>' );
+							printf( __( 'Day: %s', 'bestblog' ), '<span>' . get_the_date() . '</span>' );
 
 						elseif ( is_month() ) :
-							printf( __( 'Month: %s', 'alexandria' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
+							printf( __( 'Month: %s', 'bestblog' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
 
 						elseif ( is_year() ) :
-							printf( __( 'Year: %s', 'alexandria' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
+							printf( __( 'Year: %s', 'bestblog' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
 
 						elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
-							_e( 'Asides', 'alexandria' );
+							_e( 'Asides', 'bestblog' );
 
 						elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-							_e( 'Images', 'alexandria');
+							_e( 'Images', 'bestblog');
 
 						elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
-							_e( 'Videos', 'alexandria' );
+							_e( 'Videos', 'bestblog' );
 
 						elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
-							_e( 'Quotes', 'alexandria' );
+							_e( 'Quotes', 'bestblog' );
 
 						elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
-							_e( 'Links', 'alexandria' );
+							_e( 'Links', 'bestblog' );
 
 						else :
-							_e( 'Archives', 'alexandria' );
+							_e( 'Archives', 'bestblog' );
 
 						endif;
 					?>
@@ -88,7 +88,7 @@
 										<h1><a href="<?php the_permalink(); ?>" class="transition"><?php the_title(); ?></a></h1>
 										<h4>
 										<span class="author-name"><strong><?php _e('Post By', 'bestblog'); ?></strong> - <a href="<?php the_permalink(); ?>"><?php the_author(); ?></a></span> | 
-										<span class="comments"><strong><?php _e('Comments', 'bestblog'); ?></strong> - <a href="<?php the_permalink(); ?>"><?php comments_popup_link('No Comment', '1 Comment', '% Comments'); ?></a></span>
+										<span class="comments"><strong><?php _e('Comments', 'bestblog'); ?></strong> - <a href="<?php the_permalink(); ?>"><?php comments_popup_link('No Comment', '% Comment', 'bestblog'); ?></a></span>
 										</h4>
 									</div>
 								</header>
@@ -121,7 +121,7 @@
 					 <?php  ?>
 					 
 						<?php else : ?>
-							  <h3><?php _e('404 Error&#58; Not Found', 'CodeforBusiness'); ?></h3>
+							  <h3><?php _e('404 Error&#58; Not Found', 'bestblog'); ?></h3>
 						<?php endif; ?>	
 						
 					</div><!-- End blog wrapper -->

@@ -43,7 +43,7 @@ class Bestblog_recentpost extends WP_Widget{
 				<h1><a href="<?php the_permalink(); ?>" class="transition"><?php the_title(); ?></a></h1>
 				<h4>
 				<span class="author-name"><strong><?php _e('Post By', 'bestblog'); ?></strong> - <a href="<?php the_permalink(); ?>"><?php the_author(); ?></a></span> | 
-				<span class="comments"><strong><?php _e('Comments', 'bestblog'); ?></strong> - <a href="<?php the_permalink(); ?>"><?php comments_popup_link('No Comment', '1 Comment', '% Comments'); ?></a></span>
+				<span class="comments"><strong><?php _e('Comments', 'bestblog'); ?></strong> - <a href="<?php the_permalink(); ?>"><?php comments_popup_link('No Comment', '% Comment', 'bestblog'); ?></a></span>
 				</h4>
 			</div>
 		</li>

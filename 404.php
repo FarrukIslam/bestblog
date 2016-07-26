@@ -7,9 +7,9 @@
 				<div class="left-side col-md-9">
 					<div class="blog-wrapper">
 			
-						<h1 class="page-title-archive"><?php _e( 'Oops! That page can&rsquo;t be found.', 'propeller' ); ?></h1>
+						<h1 class="page-title-archive"><?php _e( 'Oops! That page can&rsquo;t be found.', 'bestblog' ); ?></h1>
 									
-						<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'propeller' ); ?></p>
+						<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'bestblog' ); ?></p>
 
 						<?php get_search_form(); ?>
 						<br />

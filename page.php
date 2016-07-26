@@ -9,7 +9,7 @@
 							
 							<?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
 							
-							<article id="standard" class="blog-post-item">
+							<article id="<?php the_ID(); ?>" class="blog-post-item <?php post_class(); ?>">
 								<div class="top-bg color-4"></div>
 								<div class="thumbnail">
 									<?php the_post_thumbnail( 'post-thumbnails', array( 'class' => 'img-responsive' ) ); ?>
@@ -25,7 +25,7 @@
 											<h1><a href="<?php the_permalink(); ?>" class="transition"><?php the_title(); ?></a></h1>
 											<h4>
 											<span class="author-name"><strong><?php _e('Post By', 'bestblog'); ?></strong> - <a href="<?php the_permalink(); ?>"><?php the_author(); ?></a></span> | 
-											<span class="comments"><strong><?php _e('Comments', 'bestblog'); ?></strong> - <a href="<?php the_permalink(); ?>"><?php comments_popup_link('No Comment', '1 Comment', '% Comments'); ?></a></span>
+											<span class="comments"><strong><?php _e('Comments', 'bestblog'); ?></strong> - <a href="<?php the_permalink(); ?>"><?php comments_popup_link('No Comment', '% Comment', 'bestblog'); ?></a></span>
 											</h4>
 										</div>
 									</header>
@@ -52,7 +52,7 @@
 							</article>
 						<?php endwhile; ?>
 						<?php else : ?>
-							  <h3><?php _e('404 Error&#58; Not Found', 'Bestblog'); ?></h3>
+							  <h3><?php _e('404 Error&#58; Not Found', 'bestblog'); ?></h3>
 						<?php endif; ?>
 						</div>
 					</div>

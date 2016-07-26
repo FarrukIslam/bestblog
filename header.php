@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html <?php language_attributes(); ?>>
 	<head>
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,7 +30,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="index.html">
+					<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 						<img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" class="logo img-responsive" alt="logo" />
 						<img src="<?php echo get_template_directory_uri(); ?>/img/small-logo.png" class="sticky-logo img-responsive" alt="sticky logo" />
 					</a>
@@ -38,34 +38,10 @@
 
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-					<!--<ul class="nav navbar-nav navbar-right">
-						<li><a href="#">Home</a></li>
-						<li><a href="#">Adout</a></li>
-						<li><a href="#">Services</a></li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="#">Action</a></li>
-								<li><a href="#">Another action</a></li>
-								<li><a href="#">Something else here</a></li>
-								<li role="separator" class="divider"></li>
-								<li><a href="#">Separated link</a></li>
-							</ul>
-						</li>
-						<li><a href="#">Blog</a></li>
-						<li>
-							<form class="search hidden-xs">
-							  <div class="search-wrapper">
-								<input type="text" placeholder="Search" class="search-input"/><span class="ion-ios-search-strong"></span>
-							  </div>
-							</form>
-						</li>
-					</ul>-->
 					
 					<?php
 						wp_nav_menu( array(
-							'menu'              => __( 'Primay Menu', 'joker'),
+							'menu'              => __( 'Primay Menu', 'bestblog'),
 							'theme_location'    => 'primarymenu',
 							'depth'             => 4,
 							'menu_class'        => 'nav navbar-nav navbar-right',
@@ -88,10 +64,11 @@
 					</h1>
 				</div>
 				<div class="col-md-offset-4 col-sm-offset-4 col-sm-4 col-md-4 col-xs-12">
-					<?php //custom_breadcrumbs(); ?>
 					
-					<?php the_breadcrumb(); ?>
 					
+
+					<?php bestblog_breadcrumb(); ?>
+
 				</div>
 			</div>	
 		</div>
