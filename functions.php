@@ -204,6 +204,7 @@ if( !isset($content_width)) {
 $content_width = 900;
 }
 //include files 
+require 'inc/kirki_data.php';
 require 'inc/wp_bootstrap_navwalker.php';
 require 'inc/breadcrumbs.php';
 require 'inc/widgets/bestblog_search.php';
@@ -317,11 +318,10 @@ function bestblog_breadcrumb() {
         echo '">';
         echo 'Home';
         echo '</a></li>';
-       
-    } 
+	}
 	if (!is_home()) {
         echo '<li><a href="';
-        echo home_url('home');
+        echo get_option('home');
         echo '">';
         echo 'Home';
         echo '</a></li>';
@@ -336,14 +336,14 @@ function bestblog_breadcrumb() {
         } elseif (is_page()) {
             if($post->post_parent){
                 $anc = get_post_ancestors( $post->ID );
-                $title = bestblog_short_title();
+                $title = get_the_title();
                 foreach ( $anc as $ancestor ) {
-                    $output = '<li><a href="'.get_permalink($ancestor).'" title="'.bestblog_short_title($ancestor).'">'.bestblog_short_title($ancestor).'</a></li> ';
+                    $output = '<li><a href="'.get_permalink($ancestor).'" title="'.get_the_title($ancestor).'">'.get_the_title($ancestor).'</a></li>';
                 }
                 echo $output;
                 echo '<strong title="'.$title.'"> '.$title.'</strong>';
             } else {
-                echo '<li><strong> '.bestblog_short_title().'</strong></li>';
+                echo '<li><strong> '.get_the_title().'</strong></li>';
             }
         }
     }
