@@ -25,14 +25,48 @@
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-						<span class="sr-only">Toggle navigation</span>
+						<span class="sr-only"><?php _e('Toggle navigation','bestblog'); ?></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
 					<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" class="logo img-responsive" alt="logo" />
-						<img src="<?php echo get_template_directory_uri(); ?>/img/small-logo.png" class="sticky-logo img-responsive" alt="sticky logo" />
+						
+						<?php $bestblog_logo = get_theme_mod( 'bestblog_logo'); ?>
+						<?php $bestblog_logo_sticky = get_theme_mod( 'bestblog_logo_sticky'); ?>
+						
+						<?php 
+							if($bestblog_logo){
+								echo '<img src="'.$bestblog_logo.'" class="logo img-responsive" alt="logo" />';
+							}
+							else{
+								$bestblog_logo_text = get_theme_mod( 'bestblog_logo_text'); 
+								$f_logo_text = $bestblog_logo_text[0];
+								$f_logo_text = ucfirst($f_logo_text);
+								echo '<div class="logo logo-text">
+										<span>'.$f_logo_text.'</span><h3>'.$bestblog_logo_text.'</h3>
+									  </div>	';
+							}
+						?>
+						
+						<?php
+							if($bestblog_logo_sticky){
+								echo '<img src="'.$bestblog_logo_sticky.'" class="sticky-logo img-responsive" alt="sticky logo" />';
+							}
+							else{
+								
+								
+								$bestblog_sticky_logo_text = get_theme_mod( 'bestblog_sticky_logo_text'); 
+								
+								$f_s_logo_text = $bestblog_logo_text[0];
+								$f_s_logo_text = ucfirst($f_s_logo_text);
+								
+								echo '<div class="sticky-logo sticky-logo-text">
+										<span>'.$f_s_logo_text.'</span><h3>'.$bestblog_sticky_logo_text.'</h3>
+									  </div>	';
+							}
+						?>					
+						
 					</a>
 				</div>
 
@@ -54,7 +88,27 @@
 				</div><!-- /.navbar-collapse -->
 			</div><!-- /.container-fluid -->
 		</nav>
-			
+	
+	<?php 
+	
+	$bestblog_banner_img = get_theme_mod( 'bestblog_banner_img');
+	$bestblog_banner_overlay = get_theme_mod( 'bestblog_banner_overlay');
+	
+	
+	if($bestblog_banner_img && $bestblog_banner_overlay){
+		echo '<style>
+	
+		.page-header{
+		background-image: url('.$bestblog_banner_img.');
+		}
+		.page-header:before {
+			background-color: '.$bestblog_banner_overlay.';
+		}
+		</style>';
+	}
+	
+	?>
+	
 	<section class="page-header">
 		<div class="container">
 			<div class="row">

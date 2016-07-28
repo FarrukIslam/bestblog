@@ -89,6 +89,9 @@ if (!class_exists('bestblog_scripts_load'))
 			// image size 
 			add_image_size('recent_post_widget', '35', '40', true);
 			
+			
+			add_image_size( 'home-image', 100, 50 );
+			
 			/* register nav */
 			register_nav_menus(array(
 				'primarymenu' => __('Primary Menu', 'bestblog')
@@ -356,3 +359,5 @@ function bestblog_breadcrumb() {
     elseif (is_search()) {echo"<li>Search Results"; echo'</li>';}
     echo '</ol>';
 }
+
+

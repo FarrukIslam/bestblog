@@ -44,6 +44,14 @@ Use it to make something cool, have fun, and share what you've learned with othe
 --------------------------------------------------------------*/
 /* basic CSS */
 
+@font-face {
+    font-family: 'black_roseregular';
+    src: url('fonts/blackr.woff2') format('woff2'),
+         url('fonts/blackr.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
 
 * {
 	margin: 0;
@@ -1101,4 +1109,34 @@ div#comments {
 .comment-info input, .comment-form textarea {
     width: 100%;
     border: 1px solid #E0DDDB;
+}
+
+/* logo text style */
+.logo-text {
+    margin-top: -6px;
+}
+.logo-text span, .sticky-menu .sticky-logo-text span {
+    background-color: #F7931a;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    font-size: 32px;
+    float: left;
+    line-height: 40px;
+    font-family: 'black_roseregular';
+    text-align: center;
+    color: #FFF;
+	text-transform: uppercase !important;
+}
+.logo-text h3, .sticky-menu .sticky-logo-text h3 {
+    font-family: 'black_roseregular';
+    font-style: italic;
+    font-size: 45px;
+    font-weight: normal;
+    display: inline-block;
+    line-height: 0px;
+}
+.sticky-menu .sticky-logo-text h3 {
+	color: #FFF !important;
 }
