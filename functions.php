@@ -79,6 +79,7 @@ if (!class_exists('bestblog_scripts_load'))
 			
 			/* load text domain */
 			load_theme_textdomain('bestblog', get_template_directory() . '/languages');
+			
 			/* widget shortcode support*/
 			add_filter('widget_text', 'do_shortcode');
 			
@@ -104,8 +105,8 @@ if (!class_exists('bestblog_scripts_load'))
 					'name' => __('Right Sidebar', 'bestblog') ,
 					'id' => 'right_sidebar',
 					'description' => __('Widgets in this area will be shown left side', 'bestblog') ,
-					'before_widget' => '',
-					'after_widget' => '',
+					'before_widget' => '<div class="widget">',
+					'after_widget' => '</div>',
 					'before_title' => '<h4 class="widget-title">',
 					'after_title' => '</h4>',
 				));
@@ -114,8 +115,8 @@ if (!class_exists('bestblog_scripts_load'))
 					'name' => __('Footer Sidebar', 'bestblog') ,
 					'id' => 'footer_sidebar',
 					'description' => __('Footer sidebar Widgets in this area will be shown on all posts and pages text.', 'bestblog') ,
-					'before_widget' => '<div class="col-md-3 widget">',
-					'after_widget' => '</div>',
+					'before_widget' => '<div class="col-md-3"><div class="widget">',
+					'after_widget' => '</div></div>',
 					'before_title' => '<h4 class="widget-title">',
 					'after_title' => '</h4>',
 				));

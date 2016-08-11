@@ -15,7 +15,7 @@ class bestblog_tab_content extends WP_Widget{
 		$show_tab_content = $instance['show_tab_content'];
 		$show_number_post = $instance['show_number_post'];
 
-		echo $args['before_widget'].'<div class="tab-widget widget">'.
+		echo $args['before_widget'].'<div class="tab-widget">'.
 				$args['before_title'].''.$title.''.
 				$args['after_title'];		
 		
@@ -126,14 +126,14 @@ class bestblog_tab_content extends WP_Widget{
 				<div role="tabpanel" class="tab-pane" id="comments">
 				
 				<?php
-					$args = array(
+					$argss = array(
 					   // args here
 					   'number' => $show_number_post,
 					);
 
 					// The Query
 					$comments_query = new WP_Comment_Query;
-					$comments = $comments_query->query( $args );
+					$comments = $comments_query->query( $argss );
 
 					// Comment Loop
 					if ( $comments ) {

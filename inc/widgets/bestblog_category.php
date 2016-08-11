@@ -14,18 +14,18 @@ class bestblog_category_list extends WP_Widget{
 		$title = $instance['title'];
 		$show_category_list = $instance['show_category_list'];
 
-		echo $args['before_widget'].'<div class="categories-widget widget">'.
+		echo $args['before_widget'].'<div class="categories-widget">'.
 				$args['before_title'].''.$title.''.
 				$args['after_title'];	
 		
 		
-		if($show_category_list){
+		 if($show_category_list){
 			
+		
 			
-			
-		echo '<ul class="categories">';	
-			
-		$args = array(
+		echo '<ul class="categories">';
+		
+		$cat_value = array(
 			'type'                     => 'post',
 			'child_of'                 => 0,
 			'parent'                   => '',
@@ -40,8 +40,8 @@ class bestblog_category_list extends WP_Widget{
 			'pad_counts'               => false 
 
 		); 
-
-		$categories = get_categories( $args );
+		
+		$categories = get_categories( $cat_value );
 		if($categories){
 			foreach($categories as $cat) {
 				echo '
@@ -53,7 +53,7 @@ class bestblog_category_list extends WP_Widget{
 			echo '<p>'.__( 'No Category found!', 'bestblog' ).'</p>';
 		}
 	
-			}
+			} 
 			
 			
 		echo '</ul></div>'.$args['after_widget'];

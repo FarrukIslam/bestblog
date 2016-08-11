@@ -113,16 +113,13 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-4 col-md-4 col-xs-12">
-					<h1>Blog Page
-						<br><small>Subtext for header</small>
+					<h1><?php bloginfo('name'); ?>
+						<br><small><?php bloginfo('description'); ?></small>
 					</h1>
-					
 					
 				</div>
 				<div class="col-md-offset-4 col-sm-offset-4 col-sm-4 col-md-4 col-xs-12">
-					
-					
-
+				
 					<?php bestblog_breadcrumb(); ?>
 
 				</div>

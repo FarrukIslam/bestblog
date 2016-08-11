@@ -14,7 +14,7 @@ class bestblog_search extends WP_Widget{
 		$title = $instance['title'];
 		$show_search = $instance['show-search'];
 
-		echo $args['before_widget'].'<div class="search-widget widget">'.
+		echo $args['before_widget'].'<div class="search-widget">'.
 				$args['before_title'].''.$title.''.
 				$args['after_title'];		
 		

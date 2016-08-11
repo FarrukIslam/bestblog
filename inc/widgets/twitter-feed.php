@@ -19,7 +19,7 @@ class Twitter_feed extends WP_Widget{
 		
 		
 		
-		echo $args['before_widget'].'<div class="twitter-widget widget">'.
+		echo $args['before_widget'].'<div class="twitter-widget">'.
 				$args['before_title'].''.$title.''.
 				$args['after_title'];			
 				
@@ -150,8 +150,7 @@ class Twitter_feed extends WP_Widget{
 						
 						
 			<?php 
-				echo '</div>';
-			    $args['after_widget'];
+				echo '</div>'.$args['after_widget'];
 				 
 		}
 	

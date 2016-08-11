@@ -14,7 +14,7 @@ class bestblog_tag_list extends WP_Widget{
 		$title = $instance['title'];
 		$show_tag_list = $instance['show_tag_list'];
 
-		echo $args['before_widget'].'<div class="tab-widget widget">'.
+		echo $args['before_widget'].'<div class="tab-widget">'.
 				$args['before_title'].''.$title.''.
 				$args['after_title'];	
 

@@ -41,15 +41,6 @@
 							</div>
 							
 							<footer class="entry-footer">
-								<!--<ul class="tag list-inline pull-left">
-									<strong>Tag: </strong>
-									<li><a href="#">html</a></li>
-									<li><a href="#">css</a></li>
-									<li><a href="#">Php</a></li>
-									<li><a href="#">WordPress</a></li>
-									
-								</ul>-->
-								
 								
 								
 								<?php
