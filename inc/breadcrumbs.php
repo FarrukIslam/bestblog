@@ -211,7 +211,7 @@ function custom_breadcrumbs() {
         } else if ( get_query_var('paged') ) {
                
             // Paginated archives
-            echo '<li class="item-current item-current-' . get_query_var('paged') . '"><strong class="bread-current bread-current-' . get_query_var('paged') . '" title="Page ' . get_query_var('paged') . '">'.__('Page') . ' ' . get_query_var('paged') . '</strong></li>';
+            echo '<li class="item-current item-current-' . get_query_var('paged') . '"><strong class="bread-current bread-current-' . get_query_var('paged') . '" title="Page ' . get_query_var('paged') . '">'.__('Page','bestblog') . ' ' . get_query_var('paged') . '</strong></li>';
                
         } else if ( is_search() ) {
            

@@ -8,7 +8,6 @@
 					<div class="blog-wrapper">
 					
 					
-					
 					<?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
 					
 						<!-- standard blog post -->
@@ -36,7 +35,7 @@
 								</header>
 								
 								<div class="entry-content">
-									<?php the_excerpt(); ?><a href="<?php the_permalink(); ?>" class="read-more">read more...</a>
+									<?php the_excerpt(); ?><a href="<?php the_permalink(); ?>" class="read-more"><?php _e('read more...','bestblog'); ?></a>
 								</div>
 							</div>
 							
@@ -72,7 +71,7 @@
 					<!-- Pagination -->
 					
 						<?php bestblog_pagination(); ?>
-						
+						<?php wp_link_pages( '' ); ?>
 					<!-- End Pagination -->
 					
 				</div><!-- End left side -->

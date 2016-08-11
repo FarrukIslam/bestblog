@@ -19,7 +19,7 @@
 		<![endif]-->
 		<?php wp_head(); ?>
 	</head>
-	<body <?php body_class( $class ); ?>>
+	<body <?php body_class(); ?>>
 		<nav class="navbar navbar-top">
 			<div class="container">
 				<!-- Brand and toggle get grouped for better mobile display -->
@@ -116,6 +116,7 @@
 					<h1><?php bloginfo('name'); ?>
 						<br><small><?php bloginfo('description'); ?></small>
 					</h1>
+					
 					
 				</div>
 				<div class="col-md-offset-4 col-sm-offset-4 col-sm-4 col-md-4 col-xs-12">

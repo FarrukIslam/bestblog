@@ -69,13 +69,9 @@ if (!class_exists('bestblog_scripts_load'))
 
 		function bestblog_after_theme_setup() {
 			
-			add_theme_support( 'post-formats', array(
-			  'aside',
-			  'image',
-			  'video',
-			  'quote',
-			  'link',
-			 ) );
+			add_theme_support( 'html5', array(
+				'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
+			) );
 			
 			/* load text domain */
 			load_theme_textdomain('bestblog', get_template_directory() . '/languages');
@@ -318,14 +314,14 @@ function bestblog_breadcrumb() {
     echo '<ol class="breadcrumb">';
     if (is_home()) {
         echo '<li><a href="';
-        echo get_option('home');
+        echo home_url('home');
         echo '">';
         echo 'Home';
         echo '</a></li>';
 	}
 	if (!is_home()) {
         echo '<li><a href="';
-        echo get_option('home');
+        echo home_url('home');
         echo '">';
         echo 'Home';
         echo '</a></li>';
@@ -361,4 +357,10 @@ function bestblog_breadcrumb() {
     echo '</ol>';
 }
 
+
+function get_page_id($page_name){
+	global $wpdb;
+	$page_name = $wpdb->get_var("SELECT ID FROM $wpdb->posts WHERE post_name = '".$page_name."'");
+	return $page_name;
+}
 
